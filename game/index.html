@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Index Page</title>
+	<link rel="stylesheet" href="style/style.css">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/carousel.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="logo"></div>
+		<nav class="top-nav">
+			<ul>
+				<li class="menu-item"><a>о нас</a>
+				</li>
+				<li class="menu-item"><a>новости</a>
+				</li>
+				<li class="menu-item"><a>техподдержка</a>
+				</li>
+				<li class="menu-item"><a>форум</a>
+				</li>
+				<li class="menu-item"><a>партнерская программа</a>
+				</li>
+				<li class="menu-item"><a>личный кабинет</a>
+				</li>
+				<li class="menu-item"><a>каталог товаров</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div class="container">
+	
+		<div class="carousel slide" id="myCarousel">
+			<!-- Картинки в карусельке -->
+			<div class="carousel-inner">
+				<div class="active item">
+					<div class="slide">
+						<div class="car-img">
+							<img src="img/f.png">
+							<div class="car-about"><div class="car-i">24.06.2011 <a>Анонс: Awesomenauts</a></div>
+								<div class="carr-about-all">Компания Sony  объявила, что новое дополнение для игры Killzone 3 появится 22 июня. Это дополнение называется From The Ashes и включат в себя две новые карты для ведения партизанской войны и две военные карты.</div>
+							</div>
+						</div>
+						<div class="car-img">
+							<img src="img/s.png">
+							<div class="car-about"><div class="car-i">24.06.2011 <a>Обновление Crysis 2</a></div>
+								<div class="carr-about-all">Компания Sony  объявила, что новое дополнение для игры Killzone 3 появится 22 июня. Это дополнение называется From The Ashes и включат в себя две новые карты для ведения партизанской войны и две военные карты.</div>
+							</div>
+						</div>
+						<div class="car-img">
+							<img src="img/c.png">
+							<div class="car-about"><div class="car-i">24.06.2011 <a>Игра Ratchet &amp; Clank All 4 One 
+датирована</a></div>
+								<div class="carr-about-all">Компания Sony  объявила, что новое дополнение для игры Killzone 3 появится 22 июня. Это дополнение называется From The Ashes и включат в себя две новые карты для ведения партизанской войны и две военные карты.</div>
+							</div>
+						</div>
+						<div class="car-img">
+							<img src="img/s2.png">
+							<div class="car-about"><div class="car-i">24.06.2011 <a>Анонс: Awesomenauts</a></div>
+								<div class="carr-about-all">Компания Sony  объявила, что новое дополнение для игры Killzone 3 появится 22 июня. Это дополнение называется From The Ashes и включат в себя две новые карты для ведения партизанской войны и две военные карты.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="slide">
+						<div class="car-img">
+							<img src="img/f.png">
+							<div class="car-about">24.06.2011 <a>Анонс: Awesomenauts</a>
+							</div>
+						</div>
+						<div class="car-img">
+							<img src="img/s.png">
+							<div class="car-about">24.06.2011 <a>Обновление Crysis 2</a>
+							</div>
+						</div>
+						<div class="car-img">
+							<img src="img/c.png">
+							<div class="car-about">24.06.2011 <a>Игра Ratchet &amp; Clank All 4 One 
+датирована</a>
+							</div>
+						</div>
+						<div class="car-img">
+							<img src="img/s2.png">
+							<div class="car-about">24.06.2011 <a>Анонс: Awesomenauts</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Навигационные элементы -->
+			<a class="carousel-control left" href="#myCarousel" data-slide="prev" id="left-btn"><span>&lsaquo;</span></a>
+			<a class="carousel-control right" href="#myCarousel" data-slide="next" id="right-btn"><span>&rsaquo;</span></a>
+		</div>
+		<script>
+			$('.carousel').carousel({
+				interval: false,
+			})
+		</script>
+		<div class="devider"></div>
+		<aside class="left">
+			<nav class="left-menu">
+				<ul>
+					<li><a>Скоро выйдут</a>
+					</li>
+					<li><a>Коллекционные издания</a>
+					</li>
+					<li><a>Специальные предложения</a>
+					</li>
+					<li><a>Steam игры</a>
+					</li>
+					<li><a>MMOG</a>
+					</li>
+					<li><a>Шутеры/Action</a>
+					</li>
+					<li><a>Стратегии</a>
+					</li>
+					<li><a>Симуляторы</a>
+					</li>
+					<li><a>Приключения</a>
+					</li>
+					<li><a>Ролевые (RPG)</a>
+					</li>
+					<li><a>Драки (Fighting)</a>
+					</li>
+					<li><a>Спортивные</a>
+					</li>
+					<li><a>Квесты</a>
+					</li>
+				</ul>
+			</nav>
+			<section class="subscribe">
+				<div class="side-block">
+					<div class="side-block-title">Подписка на рассылку</div>
+					<div class="side-block-area">
+						<form action="" name="subscribe">
+							<input type="checkbox" id="ch1">
+							<label for="ch1">Новые поступления</label>
+							<br>
+							<input type="checkbox" id="ch2">
+							<label for="ch2">Акции, конкурсы, скидки</label>
+							<br>
+							<input type="checkbox" id="ch3" checked="checked">
+							<label for="ch3">Новости игровой индустрии</label>
+							<div class="search">
+								<input type="email" placeholder="Введите ваш e-mail">
+								<input type="submit" class='ok-btn' value="OK">
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<section class="rekl">
+				<div class="side-block">
+					<div class="side-block-title">Реклама</div>
+					<div class="side-block-area">
+						<img src="img/left-rekl.png" class="rekl" alt="#">
+					</div>
+				</div>
+			</section>
+		</aside>
+		<aside class="right">
+			<section class="shop">
+				<div class="side-block">
+					<div class="side-block-title">Заказы</div>
+					<div class="cart">
+						<img src="img/cart.png" alt="#">
+						<p>Ваша корзина пуста</p>
+					</div>
+				</div>
+			</section>
+			<section class="entrance">
+				<div class="side-block">
+					<div class="side-block-title">Вход в систему</div>
+					<form name="enter" class="enter-form">
+						<input type="text" class="enter" placeholder="Логин">
+						<input type="password" class="enter" placeholder="Пароль">
+						<br>
+						<input type="checkbox" id="entch">
+						<label for="entch">Запомнить на сайте</label>
+						<input type="submit" class='ok-btn' value="OK">
+					</form>
+					<div class="enter-links">
+						<a>Регистрация</a>
+						<span>|</span>
+						<a>Забыли пароль?</a>
+					</div>
+				</div>
+			</section>
+			<section class="rekl">
+				<div class="side-block">
+					<div class="side-block-title">Реклама</div>
+					<div class="side-block-area">
+						<img src="img/right-rekl.png" class="rekl" alt="#">
+					</div>
+				</div>
+			</section>
+			<section class="about">
+				<div class="side-block">
+					<div class="side-block-title">Отзывы покупателей</div>
+					<div class="ab">
+						<p><span>24.03.11</span>  <span>Дмитрий</span>
+						</p>
+						<p>Спасибо администрации за сайт! Пользуюсь очень давно и всем его рекомендую. Нравятся адекватные цены, быстрая доставка ключей. Так держать!</p>
+					</div>
+					<div class="ab">
+						<p><span>24.03.11</span>  <span>Snowrain</span>
+						</p>
+						<p>Вчера впервые купил игру через интернет и остался очень доволен: быстро, удобно. Спасибо!</p>
+					</div>
+					<a class="ab-link">Все отзывы</a>
+				</div>
+			</section>
+		</aside>
+		<div class="content">
+			<div class="content-search">
+				<form name="c-search">
+					<input type="search" placeholder="Введите запрос">
+					<input type="submit" value="поиск по сайту">
+				</form>
+			</div>
+			<div class="content-wrap">
+				<div class="content-block">
+					<div class="c-block-area">
+						<div class="c-block-title">
+							<p>Battlefield 3. Предварительный заказ</p>
+							<div class="hot-wrapper">
+								<div class="hot">HOT</div>
+							</div>
+						</div>
+						<img src="img/1.png" alt="about" class="c-block-img">
+						<div class="game-info">
+							<p class="price">Цена: <span>599,00</span> руб.</p>
+							<div class="rating">
+								<div id="rating_1">
+									<input type="hidden" name="val" value="5">
+									<input type="hidden" name="vote-id" value="1">
+								</div>
+							</div>
+							<span class="rate-total">(14)</span>
+							<div class="buttons">
+								<input type="image" src="img/buy-btn.png">
+								<input type="image" src="img/cart-btn.png">
+							</div>
+						</div>
+					</div>
+					<div class="c-block-about">
+						<p>Строго по традиции, в качестве сердцевины Battlefield 3 выступают все те же многопользовательские сражения, рассчитанные на 64 пользователя и дополненные разнообразной техникой.</span>
+					</div>
+				</div>
+				<div class="content-block">
+					<div class="c-block-area">
+						<div class="c-block-title">
+							<p>Deus Ex: Human Revolution</p>
+						</div>
+						<img src="img/2.png" alt="about" class="c-block-img">
+						<div class="game-info">
+							<p class="price">Цена: <span>599,00</span> руб.</p>
+							<div class="rating">
+								<div id="rating_2">
+									<input type="hidden" name="val" value="4">
+									<input type="hidden" name="vote-id" value="1">
+								</div>
+							</div>
+							<span class="rate-total">(14)</span>
+							<div class="buttons">
+								<input type="image" src="img/buy-btn.png">
+								<input type="image" src="img/cart-btn.png">
+							</div>
+						</div>
+					</div>
+					<div class="c-block-about">
+						<p>Строго по традиции, в качестве сердцевины Battlefield 3 выступают все те же многопользовательские сражения, рассчитанные на 64 пользователя и дополненные разнообразной техникой.</span>
+					</div>
+				</div>
+				<div class="content-block">
+					<div class="c-block-area">
+						<div class="c-block-title">
+							<p>Dirt 3. Гоночный симулятор</p>
+						</div>
+						<img src="img/3.png" alt="about" class="c-block-img">
+						<div class="game-info">
+							<p class="price">Цена: <span>599,00</span> руб.</p>
+							<div class="rating">
+								<div id="rating_3">
+									<input type="hidden" name="val" value="5">
+									<input type="hidden" name="vote-id" value="1">
+								</div>
+							</div>
+							<span class="rate-total">(14)</span>
+							<div class="buttons">
+								<input type="image" src="img/buy-btn.png">
+								<input type="image" src="img/cart-btn.png">
+							</div>
+						</div>
+					</div>
+					<div class="c-block-about">
+						<p>Строго по традиции, в качестве сердцевины Battlefield 3 выступают все те же многопользовательские сражения, рассчитанные на 64 пользователя и дополненные разнообразной техникой.</span>
+					</div>
+				</div>
+				<div class="content-block">
+					<div class="c-block-area">
+						<div class="c-block-title">
+							<p>Infamous 2</p>
+						</div>
+						<img src="img/4.png" alt="about" class="c-block-img">
+						<div class="game-info">
+							<p class="price">Цена: <span>599,00</span> руб.</p>
+							<div class="rating">
+								<div id="rating_4">
+									<input type="hidden" name="val" value="5">
+									<input type="hidden" name="vote-id" value="1">
+								</div>
+							</div>
+							<span class="rate-total">(14)</span>
+							<div class="buttons">
+								<input type="image" src="img/buy-btn.png">
+								<input type="image" src="img/cart-btn.png">
+							</div>
+						</div>
+					</div>
+					<div class="c-block-about">
+						<p>Строго по традиции, в качестве сердцевины Battlefield 3 выступают все те же многопользовательские сражения, рассчитанные на 64 пользователя и дополненные разнообразной техникой.</span>
+					</div>
+				</div>
+				<div class="content-block">
+					<div class="c-block-area">
+						<div class="c-block-title">
+							<p>Battlefield 3. Предварительный заказ</p>
+						</div>
+						<img src="img/1.png" alt="about" class="c-block-img">
+						<div class="game-info">
+							<p class="price">Цена: <span>599,00</span> руб.</p>
+							<div class="rating">
+								<div id="rating_5">
+									<input type="hidden" name="val" value="5">
+									<input type="hidden" name="vote-id" value="1">
+								</div>
+							</div>
+							<span class="rate-total">(14)</span>
+							<div class="buttons">
+								<input type="image" src="img/buy-btn.png">
+								<input type="image" src="img/cart-btn.png">
+							</div>
+						</div>
+					</div>
+					<div class="c-block-about">
+						<p>Строго по традиции, в качестве сердцевины Battlefield 3 выступают все те же многопользовательские сражения, рассчитанные на 64 пользователя и дополненные разнообразной техникой.</span>
+					</div>
+				</div>
+				<div class="content-block">
+					<div class="c-block-area">
+						<div class="c-block-title">
+							<p>Deus Ex: Human Revolution</p>
+						</div>
+						<img src="img/2.png" alt="about" class="c-block-img">
+						<div class="game-info">
+							<p class="price">Цена: <span>599,00</span> руб.</p>
+							<div class="rating">
+								<div id="rating_6">
+									<input type="hidden" name="val" value="4">
+									<input type="hidden" name="vote-id" value="1">
+								</div>
+							</div>
+							<span class="rate-total">(14)</span>
+							<div class="buttons">
+								<input type="image" src="img/buy-btn.png">
+								<input type="image" src="img/cart-btn.png">
+							</div>
+						</div>
+					</div>
+					<div class="c-block-about">
+						<p>Строго по традиции, в качестве сердцевины Battlefield 3 выступают все те же многопользовательские сражения, рассчитанные на 64 пользователя и дополненные разнообразной техникой.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer><span>Copyright 2011 © Egames.ru</span>
+	</footer>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.rating-2.0.min.js"></script>
+	<script src="js/rate.js"></script>
+</body>
+
+</html>
