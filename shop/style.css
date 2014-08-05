@@ -214,6 +214,8 @@ li.dropdown {
 	background-clip: padding-box;
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding-box;
+	width: 960px;
+	height: 237px;
 }
 li.dropdown:nth-child(2) .dropdown-menu {
 margin: 0 auto 0 -159px;
