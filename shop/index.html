@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Index Page</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="jquery.rating.css">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<!--[if lt IE 9]> 
+ 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+	<![endif]-->
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/carousel.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="top-line">
+			<a href="#top" id="top" title="top"></a>
+			<div class="wrap">
+				<div class="phone">1-800-555-1234
+				</div>
+				<div class="geo">Store Locator
+				</div>
+				<div class="sign"><a href="#">Newsletter Sign Up
+			<img class="sign-arrow" src="img/arrow.png" alt="&gt;">
+		</a>
+				</div>
+				<div class="lang"><a href="#">Language
+			<img class="sign-arrow" src="img/arrow.png" alt="&gt;">
+		</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrap">
+			<h1 class="logo">
+				<img title="logo" alt="Mango" src="img/logo.png">
+			</h1>
+			<div class="shop-bag">
+				<p class="shop-title">SHOPPING BAG:</p>
+				<ul class="shop-info">
+					<li>Subtotal: <span id="subtotal">$0.00</span>
+					</li>
+					<li>Cart: <span id="cart">0</span> item(s)</li>
+					<li>
+						<a href="#">
+							<img src="img/shop-arrow.png" alt="&gt;">
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="search">
+				<form action="?">
+					<input type="submit" value="">
+					<input type="search" name="s">
+				</form>
+			</div>
+		</div>
+	</header>
+	<nav class="top-menu">
+		<div class="wrap">
+			<ul class="nav-links">
+				<li class="dropdown" id="menu-1">
+					<a href="#">NEW ARRIVALS</a>
+				</li>
+				<li class="dropdown" id="menu-2"><a href="#">COLLECTIONS</a>
+					<div class="dropdown-menu" id="drop-2">
+						<div class="dropdown-section">
+							<div class="dropdown-lists">
+								<ul>
+									<li><a href="#">dresses</a>
+									</li>
+									<li><a href="#">tops</a>
+									</li>
+									<li><a href="#">shirts</a>
+									</li>
+									<li><a href="#">jeans</a>
+									</li>
+								</ul>
+								<ul>
+									<li><a href="#">leggings</a>
+									</li>
+									<li><a href="#">trousers</a>
+									</li>
+									<li><a href="#">coats &amp; jackets</a>
+									</li>
+									<li><a href="#">cardigans and sweaters</a>
+									</li>
+								</ul>
+							</div>
+							<p class="ads-text">SAVE up to 70% on TOPS</p>
+						</div>
+						<div class="ads-block">
+							<a href="#" class="first-banner">
+								<img src="img/ads.png" alt="Ads">
+							</a>
+							<a href="#">
+								<img src="img/ads2.png" alt="Ads">
+							</a>
+						</div>
+					</div>
+				</li>
+				<li class="dropdown" id="menu-3">
+					<a href="#">SHOES</a>
+				</li>
+				<li class="dropdown" id="menu-4">
+					<a href="#">BAGS</a>
+				</li>
+				<li class="dropdown" id="menu-5">
+					<a href="#">LINGERIE</a>
+				</li>
+				<li class="dropdown" id="menu-6">
+					<a href="#">SWIM</a>
+				</li>
+				<li class="dropdown" id="menu-7">
+					<a href="#">ACCESSORIES</a>
+				</li>
+				<li class="dropdown" id="menu-8">
+					<a href="#">SALE</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="wrap">
+		<aside>
+			<div class="bread-crumbs">
+				<a href="#">Home</a> \ <span class="curr-page">Collections</span>
+			</div>
+			<nav class="left-menu">
+				<p class="cat-menu-title">SHOP BY CATEGORY</p>
+				<ul class="cat-menu">
+					<li><a href="#">Dresses</a> ( <span class="number">120</span> )</li>
+					<li><a href="#">Tops</a> ( <span class="number">250</span> )</li>
+					<li><a href="#">Shirts</a> ( <span class="number">140</span> )</li>
+					<li><a href="#">Jeans</a> ( <span class="number">75</span> )</li>
+					<li><a href="#">Leggings</a> ( <span class="number">80</span> )</li>
+					<li><a href="#">Trousers</a> ( <span class="number">66</span> )</li>
+					<li><a href="#">Coats &amp; Jackets</a> ( <span class="number">150</span> )</li>
+					<li><a href="#">Cardigans &amp; Sweaters</a> ( <span class="number">230</span> )</li>
+				</ul>
+			</nav>
+			<img class="left-banner" src="img/left-banner.png" alt="left-banner" title="">
+		</aside>
+		<div class="content">
+			<p class="slide-title">collections</p>
+			<div class="carousel slide" id="myCarousel">
+				<!-- Carousel items -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="slide">
+							<div class="left-column">
+								<a href="#">
+									<img src="img/baner-1.png" alt="Buy It Now" title="Buy It Now">
+								</a>
+							</div>
+							<div class="right-column">
+								<a href="#">
+									<img src="img/baner-3.png" alt="Buy It Now" title="Buy It Now">
+								</a>
+								<a href="#">
+									<img src="img/baner-2.png" alt="Buy It Now" title="Buy It Now">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="slide">
+							<a href="#">
+								<img src="img/slide-2.png" alt="Buy It Now" title="Buy It Now">
+							</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="slide">
+							<a href="#">
+								<img src="img/slide-3.png" alt="Buy It Now" title="Buy It Now">
+							</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="slide">
+							<a href="#">
+								<img src="img/slide-4.png" alt="Buy It Now" title="Buy It Now">
+							</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="slide">
+							<a href="#">
+								<img src="img/slide-5.png" alt="Buy It Now" title="Buy It Now">
+							</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="slide">
+							<a href="#">
+								<img src="img/slide-6.png" alt="Buy It Now" title="Buy It Now">
+							</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="slide">
+							<a href="#">
+								<img src="img/slide-7.png" alt="Buy It Now" title="Buy It Now">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				$('.carousel').carousel({
+					interval: 5000,
+				})
+			</script>
+			<h2>HOT CATEGORIES</h2>
+			<div class="hot-cat">
+				<div class="hot-cat-item">
+					<a href="#">
+						<img alt="Cardigans &amp; Sweaters" src="img/car-sw.png" title="Cardigans &amp; Sweaters">
+					</a>
+					<p class="cat">Cardigans &amp; Sweaters</p>
+				</div>
+				<div class="hot-cat-item">
+					<a href="#">
+						<img alt="Tops" src="img/tops.png" title="Tops">
+					</a>
+					<p class="cat">Tops</p>
+				</div>
+				<div class="hot-cat-item">
+					<a href="#">
+						<img alt="Shirts" src="img/shirts.png" title="Shirts">
+					</a>
+					<p class="cat">Shirts</p>
+				</div>
+				<div class="hot-cat-item">
+					<a href="#">
+						<img alt="Coats &amp; Jackets" src="img/coats.png" title="Coats &amp; Jackets">
+					</a>
+					<p class="cat">Coats &amp; Jackets</p>
+				</div>
+			</div>
+			<div class="onsale">
+				<h3 class="onsale-top">ON SALE THIS WEEK</h3>
+				<div class="sales">
+					<div class="sale-item">
+						<a href="#">
+							<img src="img/sale1.png" alt="1st item alt" title="1st item description">
+						</a>
+						<div class="sale-ico">SALE</div>
+						<div class="sale-item-descr">
+							<div class="info-line">
+								<div class="name">Swiss embroidery cotton dress</div>
+								<div class="new-price"><span class="small">$</span>59.<span class="cents">90</span>
+								</div>
+							</div>
+							<div class="old-info-line">
+								<div class="save">Save: $40.00 (35%)</div>
+								<div class="old-price">$<span class="small">99.99</span>
+								</div>
+							</div>
+							<div class="rating">
+								<div id="rating_1">
+									<input type="hidden" name="val" value="4">
+									<input type="hidden" name="vote-id" value="1">
+								</div>
+							</div>
+							<p class="rate-total">4/5 (<span class="under">22</span>)</p>
+						</div>
+					</div>
+					<div class="sale-item">
+						<a href="#">
+							<img src="img/sale2.png" alt="second item alt" title="second item description">
+						</a>
+						<div class="sale-item-descr">
+							<div class="info-line">
+								<div class="name">Striped pleated dress</div>
+								<div class="new-price"><span class="small">$</span>39.<span class="cents">99</span>
+								</div>
+							</div>
+							<div class="old-info-line">
+								<div class="save">Save: $10.00 (10%)</div>
+								<div class="old-price">$<span class="small">49.99</span>
+								</div>
+							</div>
+							<div class="rating">
+								<div id="rating_2">
+									<input type="hidden" name="val" value="4">
+									<input type="hidden" name="vote-id" value="2">
+								</div>
+							</div>
+							<p class="rate-total">4/5 (<span class="under">45</span>)</p>
+						</div>
+					</div>
+					<div class="sale-item">
+						<a href="#">
+							<img src="img/sale3.png" alt="third item alt" title="third item description">
+						</a>
+						<div class="sale-item-descr">
+							<div class="info-line">
+								<div class="name">Linen cotton blend dress</div>
+								<div class="new-price"><span class="small">$</span>34.<span class="cents">99</span>
+								</div>
+							</div>
+							<div class="old-info-line">
+								<div class="save">Save: $40.00 (35%)</div>
+								<div class="old-price">$<span class="small">59.99</span>
+								</div>
+							</div>
+							<div class="rating">
+								<div id="rating_3">
+									<input type="hidden" name="val" value="3">
+									<input type="hidden" name="vote-id" value="3">
+								</div>
+							</div>
+							<p class="rate-total">3/5 (<span class="under">22</span>)</p>
+						</div>
+					</div>
+					<div class="sale-item">
+						<a href="#">
+							<img src="img/sale4.png" alt="4th item alt" title="4th item description">
+						</a>
+						<div class="sale-item-descr">
+							<div class="info-line">
+								<div class="name">Swiss embroidery cotton dress</div>
+								<div class="new-price"><span class="small">$</span>39.<span class="cents">90</span>
+								</div>
+							</div>
+							<div class="old-info-line">
+								<div class="save">&nbsp;</div>
+								<div class="old-price">&nbsp;</div>
+							</div>
+							<div class="rating">
+								<div id="rating_4">
+									<input type="hidden" name="val" value="4">
+									<input type="hidden" name="vote-id" value="4">
+								</div>
+							</div>
+							<p class="rate-total">4/5 (<span class="under">45</span>)</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="subscribe-form">
+			<div class="wrap">
+				<p class="subscribe-title">SIGN UP FOR EMAIL</p>
+				<p class="subscribe-text">Sign up to our newsletter and keep up to date with all the collections and the latest trends.</p>
+				<div class="subscribe">
+					<form name="subscribe" action="?subs">
+						<input type="email" class="subscribe-mail">
+						<input type="image" class="mail-btn" src="img/mail-btn.png" alt="Subscribe">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="footer-group">
+			<div class="wrap">
+				<div class="bottom-logo">
+					<img src="img/bottom-logo.png" alt="Logo" title="Logo">
+					<p>&copy; 2013 IQ.store. All rights reserved.</p>
+				</div>
+				<div class="social">
+					<a href="http://twitter.com">
+						<img src="img/twitter.png" alt="Twitter" title="Follow Us on Twitter">
+					</a>
+					<a href="http://facebook.com">
+						<img src="img/facebook.png" alt="Facebook" title="Join Us in Facebook">
+					</a>
+					<a href="https://www.linkedin.com">
+						<img src="img/linkedin.png" alt="LinkedIn" title="Watch Us on LinkedIn">
+					</a>
+				</div>
+				<div class="bottom-menu">
+					<ul>
+						<li>customer service</li>
+						<li><a href="#">Help</a>
+						</li>
+						<li><a href="#">Contact Us</a>
+						</li>
+						<li><a href="#">Return Policy</a>
+						</li>
+						<li><a href="#">Privacy Policy</a>
+						</li>
+					</ul>
+					<ul>
+						<li>corporate info</li>
+						<li><a href="#">About Us</a>
+						</li>
+						<li><a href="#">Contact Us</a>
+						</li>
+						<li><a href="#">Store Locator</a>
+						</li>
+					</ul>
+					<ul>
+						<li>explore</li>
+						<li><a href="#">Site Map</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<script>
+				$(function () {
+					$('a[href^="#top"]').click(function () {
+						var target = $(this).attr('href');
+						$('html, body').animate({
+							scrollTop: $(target).offset().top
+						}, 300);
+						return false;
+					});
+				});
+			</script>
+			<a class="toplink" href="#top">
+				<img src="img/top-ico.png" alt="toTop">
+			</a>
+		</div>
+	</footer>
+
+	<script src="js/jquery.rating-2.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/dropdown.js"></script>
+	<script src="js/rate.js"></script>
+</body>
+
+</html>
