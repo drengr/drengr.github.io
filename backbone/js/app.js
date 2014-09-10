@@ -4,16 +4,14 @@ clientID: 'dee9a7204df14a7ca686a94a9aaaa320',
 apiHost: 'https://api.instagram.com/'
 }
 
-	  /* $.getJSON(config.apiHost + 'v1/tags/dogs/media/recent?callback=?&client_id=' + config.clientID)
-	   .success(
-		   function (result){
-		   console.log('Server answer: ' +result);
-		   }
-	   )
-	   .error(function(){console.log('ERROR')});
-	   console.log(y);*/
+var url = config.apiHost + 'v1/tags/snow/media/recent?access_token=' + config.apiKey;
+	 $.getJSON(url,
+			 function(data, textStatus) {
+		 document.write(data+'<br>'+textStatus)
+	 })
+	  
 	
-   function getData() {
+ /*  function getData() {
 	$.ajax({
 		dataType: 'jsonp',
 		cache: false,
@@ -21,4 +19,4 @@ apiHost: 'https://api.instagram.com/'
 		success: function(result) {console.log(result)},
 		error:  function(jqXHR, textStatus, errorThrown){console.log('Error!\n' +textStatus+ '\n' +errorThrown)}
 	})
-   }
+   }*/
