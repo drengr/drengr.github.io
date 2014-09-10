@@ -1,6 +1,6 @@
 
    function getData() {
-	   var x = $.getJSON("https://api.instagram.com/v1/tags/football/media/recent?access_token=e176f05b56f940658a91d14141e3d1dc")
+	   var y = $.getJSON("https://api.instagram.com/v1/tags/football/media/recent?access_token=e176f05b56f940658a91d14141e3d1dc")
 	   .success(
 		   function (result){
 		   console.log(result);
