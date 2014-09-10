@@ -5,8 +5,9 @@
 		   function (result){
 		   console.log(result);
 		   }
-	   );
-	   console.log(x);
+	   )
+	   .error(function(){console.log('ERROR')});
+	   //console.log(x);
 	}
 	
 
