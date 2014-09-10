@@ -1,5 +1,5 @@
 var config = {
-//apiKey: 'e176f05b56f940658a91d14141e3d1dc',
+apiKey: '1492966701.dee9a72.aa07b03276164d0f9aaec662ffbb57e0',
 clientID: 'dee9a7204df14a7ca686a94a9aaaa320',
 apiHost: 'https://api.instagram.com/'
 }
@@ -17,7 +17,7 @@ apiHost: 'https://api.instagram.com/'
 	$.ajax({
 		dataType: 'jsonp',
 		cache: false,
-		url: config.apiHost + 'v1/tags/dogs/media/recent?callback=?&client_id=' + config.clientID,
+		url: config.apiHost + 'v1/tags/snow/media/recent?access_token=' + config.apiKey,
 		success: function(result) {console.log(result)},
 		error:  console.log('Error')
 	})
