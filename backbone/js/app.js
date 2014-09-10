@@ -7,7 +7,7 @@
 		   }
 	   )
 	   .error(function(){console.log('ERROR')});
-	   //console.log(x);
+	   console.log(y);
 	}
 	
 
