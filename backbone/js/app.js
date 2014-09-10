@@ -19,6 +19,6 @@ apiHost: 'https://api.instagram.com/'
 		cache: false,
 		url: config.apiHost + 'v1/tags/snow/media/recent?access_token=' + config.apiKey,
 		success: function(result) {console.log(result)},
-		error:  console.log('Error')
+		error:  function(jqXHR, textStatus, errorThrown){console.log('Error!\n' +textStatus+ '\n' +errorThrown)}
 	})
    }
