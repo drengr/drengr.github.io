@@ -11,4 +11,3 @@
 		success: console.log('Пришли данные:' +data),
 		error:  console.log('Error')
 	});
-}
