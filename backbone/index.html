@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,13 @@
 	<link rel="stylesheet" href="css/style.css">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/app.js"></script>
 	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style>
+	<style>
 		* {
 			margin: 0;
 			padding: 0;
@@ -22,11 +25,11 @@
 			background-color: #416F94;
 			color: #fff;
 		}
-		h1{
+		h1 {
 			margin-top: 10px;
 			font-size: 26px;
 		}
-		.row{
+		.row {
 			background-color: #E8E9EA;
 			color: #BFBFBF;
 		}
@@ -34,18 +37,25 @@
 			background-color: #DBDCDD;
 			color: #000;
 			border: 1px solid #CACBCC;
-			height: 300px;
+			word-wrap: break-word;
 		}
 		.userpic {
 			border: 1px solid #fff;
 		}
+		.userpic img {
+			width: 100%;
+		}
+		.pic {
+			width: 100%;
+			margin: 10px auto;
+		}
 		.search {
 			height: 100px;
 		}
-		form{
+		form {
 			margin-top: 30px;
 		}
-		input[type='search']{
+		input[type='search'] {
 			height: 35px;
 			width: 350px;
 			border-radius: 5px;
@@ -58,44 +68,48 @@
 <body>
 	<div class="container-fluid">
 		<div class="row  clearfix">
-			<header class="col-md-12"><h1 class="text-center">Instagram App</h1></header>
+			<header class="col-md-12">
+				<h1 class="text-center">Instagram App</h1>
+			</header>
 		</div>
-		<div class="row clearfix">
-		<div class="col-md-6 col-md-offset-3 page-item search text-center">
-		<form onsubmit="getData()">
-			<input type='search' class="search-tag" placeholder="Type your tags here">
-			<button type="submit" class="btn btn-default">Search</button>
-			</form>
+		<div class="row clearfix search-block">
+			<div class="col-md-6 col-md-offset-3 page-item search text-center">
+				<form class='search-form'>
+					<input type='search' class="search-tag" placeholder="Type your tags here">
+					<button type="submit" class="btn btn-default submit">Search</button>
+				</form>
 			</div>
 		</div>
-		<div class="row clearfix">
-			<div class="col-md-3">
-				<div class="row clearfix">
-					<div class="col-md-5 col-md-offset-6 userpic">UserPic</div>
+		<!--
+		<div class='row clearfix'>
+			<div class='col-md-3'>
+				<div class='row clearfix'>
+					<div class='col-md-7 col-md-offset-5 userpic'>
+						<figure>
+							<img src ='{profile_picture}' alt = '{username}' title ='{full_name}' >
+								<figcaption>" + upic.user.full_name + "</figcaption>
+						</figure
+					</div>
 				</div>
 			</div>
-			<div class="col-md-6 page-item">Picture</div>
-		</div>
-		<div class="row clearfix">
-			<div class="col-md-3">
-				<div class="row clearfix">
-					<div class="col-md-5 col-md-offset-6 userpic">UserPic</div>
-				</div>
+			<div class='col-md-6 page-item'>
+				<figure>
+					<img class = 'pic' src ='{url}' alt = 'Picture' >
+						<figcaption>{text}</figcaption>
+				</figure>
 			</div>
-			<div class="col-md-6 page-item">Picture</div>
 		</div>
-		<div class="row clearfix">
-			<div class="col-md-3">
-				<div class="row clearfix">
-					<div class="col-md-5 col-md-offset-6 userpic">UserPic</div>
-				</div>
-			</div>
-			<div class="col-md-6 page-item">Picture</div>
-		</div>
+-->
+		<!--
+<div class="row clearfix more">
+	<div class="col-md-6 col-md-offset-3 text-center more">
+	<button type='button' id='more' data-id='' onclick = 'getMore();'>Get More photos ...</button>
 	</div>
-<script src="js/underscore.js"></script>
-<script src="js/jquery-2.1.1.min.js"></script>
-<script src="js/backbone.js"></script>
-<script src="js/app.js"></script>
+		</div>
+-->
+	</div>
+	<script src="js/underscore.js"></script>
+	<script src="js/backbone.js"></script>
 </body>
+
 </html>
