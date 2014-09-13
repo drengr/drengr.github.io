@@ -36,21 +36,45 @@
 		.page-item {
 			background-color: #DBDCDD;
 			color: #000;
-			border: 1px solid #CACBCC;
 			word-wrap: break-word;
+			padding-bottom: 30px;
 		}
-		.userpic {
-			border: 1px solid #fff;
+		.pic-block{
+			box-shadow: 0px 0px 3px 2px rgba(50, 50, 50, 0.5);
+		}
+		.user-about {
+			font-weight: bold;
+			padding: 0;
+			padding-left: 10px;
+		}
+		.username {
+			color: #416F94;
+			margin: 0;
 		}
 		.userpic img {
-			width: 100%;
+			width: 80px;
+			height: 80px;
+			margin: 0 auto 10px;
 		}
 		.pic {
 			width: 100%;
-			margin: 10px auto;
+			margin: 0 auto;
+		}
+		.like-info, figcaption{
+			padding: 10px;
+		}
+		.like-info, figcaption {
+			background-color: #F5F5F5;
+			border-bottom: 1px solid #BFBFBF;
+		}
+		.likes-cnt {
+			margin-left: 10px;
+			font-weight: bold;
+			color: #B2B2B2;
 		}
 		.search {
 			height: 100px;
+			background-color: #DBDCDD;
 		}
 		form {
 			margin-top: 30px;
@@ -61,6 +85,29 @@
 			border-radius: 5px;
 			outline: 0;
 			padding-left: 20px;
+		}
+		.comments-block{
+			background-color: #F8F8F8;
+			padding: 10px;
+		}
+		.comm-line {
+			margin: 0;
+			background-color: #F8F8F8;
+			padding: 10px 0;
+			border-bottom: 1px solid  #E8E9EA;
+		}
+		.comm-name{
+			color: #416F94;
+			font-weight: bold;
+			margin-right: 10px;
+		}
+		input[type='text'] {
+			width: 100%;
+			height: 40px;
+			padding-left: 20px;
+		}
+		form.comment {
+			margin: 0;
 		}
 	</style>
 </head>
@@ -73,7 +120,7 @@
 			</header>
 		</div>
 		<div class="row clearfix search-block">
-			<div class="col-md-6 col-md-offset-3 page-item search text-center">
+			<div class="col-md-6 col-md-offset-3 search text-center">
 				<form class='search-form'>
 					<input type='search' class="search-tag" placeholder="Type your tags here">
 					<button type="submit" class="btn btn-default submit">Search</button>
