@@ -81,7 +81,8 @@ function getAuthorUrl(authID){
 							'Access-Control-Allow-Origin': '*'
 						}
 					}))
-		.then(function ( result ) {
+		.done(function ( result ) {
+			return result.data.profile_picture;
   console.log(result.data.profile_picture);
 })
 }
