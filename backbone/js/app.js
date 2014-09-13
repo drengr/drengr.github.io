@@ -71,27 +71,32 @@ function getTime(time){
 	return string;
 }
 
-function getAuthorUrl(authID){
+function getAuthorPic(authID){
 		url = config.Beget.apiHost + '/v1/users/' + authID + '/?access_token=' + config.Beget.apiKey;
-		$.when($.ajax({
-						dataType: 'jsonp',
-						cache: false,
-						url: url,
-						headers: {
+	$.ajax({
+				dataType: 'jsonp',
+				cache: false,
+				url: url,
+				headers: {
 							'Access-Control-Allow-Origin': '*'
+				},
+				success: function(result){
+					var src = '';
+						if(Object.keys(result.data).length != 0){
+							src = result.data.profile_picture;
+						}else{
+							src = '';
 						}
-					}))
-		.done(function ( result ) {
-			return result.data.profile_picture;
-  console.log(result.data.profile_picture);
-})
+					$('.'+ authID).append("<img class='comm-pic' src = '" + src  + "' alt=''>");
+				}		
+					});
 }
 
 function getComments(comm){
-	var commBlock = commPic = '';
+	var commBlock =  '';
 	$.each(comm, function(index, c){
-			commPic = getAuthorUrl(c.from.id);
-			commBlock += "<div class='row comm-line'><div class='col-md-1'><img src='"+ commPic +"' alt='' ></div><div class='col-md-11'><span class='comm-name'>" + c.from.username + "</span> <span class='comm-body'>" + c.text + "</span></div></div>";
+			commBlock += "<div class='row comm-line'><div class='col-md-1 " + c.from.id + "'></div><div class='col-md-11'><span class='comm-name'>" + c.from.username + "</span> <span class='comm-body'>" + c.text + "</span></div></div>";
+		getAuthorPic(c.from.id);
 			return commBlock;
 		}
 	);
