@@ -27,6 +27,9 @@
 			margin-top: 10px;
 			font-size: 26px;
 		}
+		h1 a {
+			color: #fff;
+		}
 		.row {
 			background-color: #E8E9EA;
 			color: #BFBFBF;
@@ -37,7 +40,7 @@
 			word-wrap: break-word;
 			padding-bottom: 30px;
 		}
-		.pic-block{
+		.pic-block {
 			box-shadow: 0px 0px 3px 2px rgba(50, 50, 50, 0.5);
 		}
 		.user-about {
@@ -58,10 +61,12 @@
 			width: 100%;
 			margin: 0 auto;
 		}
-		.like-info, figcaption{
+		.like-info,
+		figcaption {
 			padding: 10px;
 		}
-		.like-info, figcaption {
+		.like-info,
+		figcaption {
 			background-color: #F5F5F5;
 			border-bottom: 1px solid #BFBFBF;
 		}
@@ -84,7 +89,7 @@
 			outline: 0;
 			padding-left: 20px;
 		}
-		.comments-block{
+		.comments-block {
 			background-color: #F8F8F8;
 			padding: 10px;
 		}
@@ -92,14 +97,14 @@
 			margin: 0;
 			background-color: #F8F8F8;
 			padding: 10px 0;
-			border-bottom: 1px solid  #E8E9EA;
+			border-bottom: 1px solid #E8E9EA;
 		}
-		.comm-name{
+		.comm-name {
 			color: #416F94;
 			font-weight: bold;
 			margin-right: 10px;
 		}
-		.comm-pic{
+		.comm-pic {
 			width: 40px;
 			height: 40px;
 		}
@@ -113,16 +118,17 @@
 		}
 	</style>
 </head>
-<a href="/">/</a> 
-<a href="/page">/page</a> 
-<a href="/cite">/cite</a>
-<a href="/page/3">/page/3</a>
+<a href="#!/">/</a>
+<a href="#!/photos">/photos</a>
+<a href="#!/photos/id">/page/3</a>
+
 <body>
+	<div class='container-fluid'></div>
+	
 <script type='text/template' id='start'>
-	<div class='container-fluid'>
-		<div class='row  clearfix'>
-			<header class='col-md-12'>
-				<h1 class='text-center'>Instagram App</h1>
+		<div class = 'row  clearfix'>
+			<header class = 'col-md-12'>
+				<h1 class = 'text-center'> <a href='#!/photos'>Instagram App</a> </h1>
 			</header>
 		</div>
 		<div class='row clearfix search-block'>
@@ -130,15 +136,62 @@
 				<form class='search-form'>
 					<input type='search' class='search-tag' placeholder='Type your tags here'>
 					<button type='submit' class='btn btn-default submit'>Search</button>
-				</form>
+			</form>
 			</div>
+			</div>
+</script>
+	
+<script type='text/template' id='pic-block'>
+<div class='col-md-3'>
+	<div class='row clearfix'>
+		<div class='col-md-5 col-md-offset-3 user-about'>
+			<p class='username'>
+				<%= pic.user.full_name %>
+			</p>
+			<p class='pic-time'>
+				<%= ago %>
+			</p>
+		</div>
+		<div class='col-md-4 userpic'>
+			<img src='<%= pic.user.profile_picture %>' alt='<%= pic.user.username %>' title='<%= pic.user.full_name %>'>
+			<div class='col-md-6 page-item'>
+				<div class='pic-block'>
+					<figure>
+						<img class='pic' src='<%= pic.images.low_resolution.url %>' alt='Picture'>
+						<div class='like-info'>
+							<img src='i/like.png' alt=''><span class='likes-cnt'><%= pic.likes.count %></span>
+						</div>
+						<figcaption><%= text (picture text) %></figcaption>
+					</figure>
+					<div class='comments-block'><%= comments.view %></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</script>
+	
+<script type='text/template' id='pic'>
+<div class = 'col-md-12 text-center'>
+		Йа картинко)))
+</div>
+</script>
+<script type='text/template' id='page'>
+	<div class = 'row  clearfix'>
+		<header class = 'col-md-12'>
+			<h1 class = 'text-center'> Instagram App </h1>
+		</header>
+	</div>
+	<div class = 'row  clearfix'>
+		<div class = 'col-md-12 text-center'>
+		Single photo page
 		</div>
 	</div>
 </script>
 	<script src='js/jquery-2.1.1.min.js'></script>
-	<script src='js/common.js'></script>
 	<script src='js/underscore.js'></script>
 	<script src='js/backbone.js'></script>
+	<script src='js/common.js'></script>
 </body>
 
 </html>
