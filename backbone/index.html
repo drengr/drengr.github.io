@@ -142,29 +142,33 @@
 			</div>
 </script>
 	
-<script type='text/template' id='pic-block'>
-<div class='col-md-3'>
-	<div class='row clearfix'>
-		<div class='col-md-5 col-md-offset-3 user-about'>
-			<p class='username'>
-				<%= pic.user.full_name %>
-			</p>
-			<p class='pic-time'>
-				<%= ago %>
-			</p>
+<script type='text/template' id='pic'>
+<div class='row clearfix pic-row'>
+	<div class='col-md-3'>
+		<div class='row clearfix'>
+			<div class='col-md-5 col-md-offset-3 user-about'>
+				<p class='username'>
+					<%= userFullname %>
+				</p>
+				<p class='pic-time'>
+					<%= time %>
+				</p>
+			</div>
+			<div class='col-md-4 userpic'>
+				<img src='<%= userProfilePicture %>' alt='<%= userUsername %>' title='<%= userFullname %>'>
+			</div>
 		</div>
-		<div class='col-md-4 userpic'>
-			<img src='<%= pic.user.profile_picture %>' alt='<%= pic.user.username %>' title='<%= pic.user.full_name %>'>
+	</div>
 			<div class='col-md-6 page-item'>
 				<div class='pic-block'>
 					<figure>
-						<img class='pic' src='<%= pic.images.low_resolution.url %>' alt='Picture'>
+						<img class='pic' src='<%= imgUrl %>' alt='Picture'>
 						<div class='like-info'>
-							<img src='i/like.png' alt=''><span class='likes-cnt'><%= pic.likes.count %></span>
+							<img src='i/like.png' alt=''><span class='likes-cnt'><%= likesCnt %></span>
 						</div>
-						<figcaption><%= text (picture text) %></figcaption>
+						<figcaption><%= captionText %></figcaption>
 					</figure>
-					<div class='comments-block'><%= comments.view %></div>
+					<div class='comments-block'></div>
 				</div>
 			</div>
 		</div>
@@ -172,11 +176,25 @@
 </div>
 </script>
 	
-<script type='text/template' id='pic'>
-<div class = 'col-md-12 text-center'>
-		Йа картинко)))
+<script type='text/template' id='morebtn'>
+<div class='row clearfix morebtn'>
+	<div class='col-md-6 col-md-offset-3 text-center'>
+		<button type='button' class='btn btn-default lg-btn' id='more' data-id='<%= nextMaxID %>'>Load more</button>
+	</div>
 </div>
 </script>
+
+<script type='text/template' id='comment'>
+<!--<div class='row comm-line'>-->
+	<div class='col-md-1'>
+		<img class='comm-pic' src='<%= fromProfilePicture  %>' alt=''>
+	</div>
+	<div class='col-md-11'>
+		<span class='comm-name'><%= fromUsername %></span>  <span class='comm-body'><%= commText %></span>
+	</div>
+<!--</div>-->
+</script>
+
 <script type='text/template' id='page'>
 	<div class = 'row  clearfix'>
 		<header class = 'col-md-12'>
@@ -192,6 +210,7 @@
 	<script src='js/jquery-2.1.1.min.js'></script>
 	<script src='js/underscore.js'></script>
 	<script src='js/backbone.js'></script>
+	<script src='js/backbone.localStorage.js'></script>
 	<script src='js/common.js'></script>
 </body>
 
