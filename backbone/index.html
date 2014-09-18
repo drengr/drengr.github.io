@@ -168,10 +168,27 @@
 						</div>
 						<figcaption><%= captionText %></figcaption>
 					</figure>
-					<div class='comments-block'></div>
+					<div class='comments-block' data-id='<%= id %>'>
+						<div class='row comm-line no-comments'>
+							<div class='col-md-12 text-center'>There is no comments here. You can be first.</div>
+						</div>
+						<div class='add-comm'>
+							<form class='comment' onsubmit='return false'>
+								<input type='text' placeholder='Write your comment...'>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+</script>
+
+<script type='text/template' id='wrong'>	
+<div class='row clearfix wrong-search'>
+	<div class='col-md-6 col-md-offset-3 page-item text-center'>
+		It was found nothing by your request. Try ones more.
 	</div>
 </div>
 </script>
@@ -185,14 +202,14 @@
 </script>
 
 <script type='text/template' id='comment'>
-<!--<div class='row comm-line'>-->
+<div class='row comm-line'>
 	<div class='col-md-1'>
 		<img class='comm-pic' src='<%= fromProfilePicture  %>' alt=''>
 	</div>
 	<div class='col-md-11'>
 		<span class='comm-name'><%= fromUsername %></span>  <span class='comm-body'><%= commText %></span>
 	</div>
-<!--</div>-->
+</div>
 </script>
 
 <script type='text/template' id='page'>

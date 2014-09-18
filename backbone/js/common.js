@@ -46,7 +46,8 @@ var Photo = Backbone.Model.extend({
 			captionText: '',
 			commentsModel: '',
 			imgUrl: '',
-			likesCnt: 0
+			likesCnt: 0,
+			show: false
 		}
 	}
 });
@@ -72,7 +73,8 @@ var PaginID = Backbone.Model.extend({
 var Comment = Backbone.Model.extend({
 	defaults: function(){
 		return {
-			id: 0,
+			//id: 0,
+			picID: 0,
 			fromProfilePicture: '',
 			fromUsername: '',
 			commText: ''
@@ -112,36 +114,28 @@ var Picture = Backbone.View.extend({
 });
 
 /*Comments block view */
-var Comments = Backbone.View.extend({
+var CommBlockView = Backbone.View.extend({
 	el: $('.comments-block'),
+	template: _.template($('#comment').html()),
 	
 	initialize: function(){
-        _.bindAll(this, "renderItem");
-    },
+		this.render();
+		
+	},
 	
-	renderItem: function(model){
-        var commView = new CommView({model: model});
-        commView.render();
-        $(this.el).append(commView.el);
-    },
-	
-	render: function(){
-        this.collection.each(this.renderItem);
-    }
-	
-});
-
-/*Comments line view*/
-var CommView = Backbone.View.extend({
-	tagName: 'div',
-	className: 'row comm-line',
-	template: _.template($('#comment').html()),
-	render: function(){
-		var html = this.template(model.toJSON());
-		$(this.el).append(html)
+	render: function() {
+		var template = this.template;
+		this.collection.models.forEach(function(model){
+			// Get a parent element for every comment, according picture's id
+			var el = $('.comments-block[data-id='+model.attributes.picID+']');
+			$('.comments-block[data-id='+model.attributes.picID+'] > .no-comments').remove();
+			var html = template(model.toJSON());
+			$(html).prependTo(el);
+		});
+		return this;
 	}
 });
-	
+
 	
 /*View for button "Load more" */
 var MoreBtn = Backbone.View.extend({
@@ -162,8 +156,8 @@ var MoreBtn = Backbone.View.extend({
 	},
 	
 	getMore: function(){
-		var id = $('#more').attr('data-id');
-		if (id.length > 0) {
+		var id = parseInt($('#more').attr('data-id'));
+		if (id > 0) {
 			var more = '&max_id=' + id;
 			var target = $("body").height(); // Get a target for mini-animation in  future 
 			var scrollTime = target/1.73; // time = (end-start)/speed.  Our start = 0, it's the page's begin
@@ -174,6 +168,19 @@ var MoreBtn = Backbone.View.extend({
 		}
 	}
 });
+
+var WrongView = Backbone.View.extend({
+	initialize: function(){
+		this.render();
+	},
+	el: $('.container-fluid'),
+	template: _.template($('#wrong').html()),
+	render: function(){  
+		$(this.el).append(this.template());
+		console.log('Wrong');
+		return this;
+	}
+})
 
 
 /*Start view*/
@@ -192,7 +199,9 @@ var Start = Backbone.View.extend({
 	},
 	
 	search: function(){
-		Photos.reset(); // Reset a collection from previous saerch results
+		Photos.reset(); // Reset a collection of photos from previous search results
+		Comments.reset(); // Reset a collection of comments from previous search results
+		$('.wrong-search').remove(); // Delete results of wrong search
 		$('.pic-row').remove(); // Clean the output
 		$('.morebtn').remove(); // Delete button 'Load more'
 		this.getData();
@@ -215,12 +224,20 @@ var Start = Backbone.View.extend({
 			},
 			success: function (result) { 
 				console.log(result);
-				Views.start.makePage(result);
-				Views.start.addPic(Photos);
-				Views.start.addAllComm(Comments);
-				if (Object.keys(result).length != 0 || Object.keys(result.pagination).length != 0 || (result.pagination.next_max_id !== null && result.pagination.next_max_id !== undefined)) {
-					var id = new PaginID({nextMaxID: result.pagination.next_max_id});
-					var more = new MoreBtn({model: id});
+				if (Object.keys(result.data).length != 0){
+					console.log(Object.keys(result.data).length);
+					console.log(Object.keys(result.pagination).length);
+					console.log(result.pagination.next_max_id);
+					Views.start.makePage(result);
+					Views.start.addPic(Photos, Comments);
+					if (result.pagination.next_max_id !== undefined) {
+						var id = new PaginID({nextMaxID: result.pagination.next_max_id});
+						var more = new MoreBtn({model: id});
+					}else{
+						console.log('Nothing more');
+					}
+				}else{
+					Views.start.wrongSearch();
 				}
 			},
 			error: function () {
@@ -269,35 +286,46 @@ var Start = Backbone.View.extend({
 					captionText: text,
 					commentsModel: '',
 					imgUrl: pic.images.low_resolution.url,
-					likesCnt: pic.likes.count
+					likesCnt: pic.likes.count,
+					show: false
 				});
-				console.log('makePage: Model create');
+				console.log('makePage: Model was created');
 				// Make a collection with comments' data
 				if (pic.comments.count != 0){
-					var id = pic.id;
-					//TODO: adding to collection is absent. Collection stay empty
-					this.collection = Comments;
-					$.each(pic.comments.data, function(index,c){
-							this.collection.add({
-								id: id,
-								fromProfilePicture: c.from.profile_picture,
-								fromUsername: c.from.username,
-								commText: c.text
-							});
-						}
-					);
-					
+					Views.start.makeCommCollection(pic.comments.data, pic.id);
+					console.log('Collection was created');
+				}else{
+					console.log('No comments');
 				}
 			});
 		}
 	},
 	
-	addPic: function (data){
-		var picView = new Picture({collection: data});
+	makeCommCollection: function(data, id){
+					$.each(data, function(index,c){
+							Comments.add({
+								picID: id,
+								fromProfilePicture: c.from.profile_picture,
+								fromUsername: c.from.username,
+								commText: c.text
+							});
+						console.log('Model in Comments was created');
+						});
+	},
+	
+	addPic: function (picData, commData){
+		var picView = new Picture({collection: picData});
+		if(commData.length > 0){
+			this.addAllComm(commData);
+		}
 	},
 	
 	addAllComm: function(data){
-		var commBlock = new Comments({collection: data});
+		var commBlock = new CommBlockView({collection: data});
+	},
+	
+	wrongSearch: function(){
+		var wrong = new WrongView();
 	}
 	
 });
