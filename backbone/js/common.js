@@ -3,7 +3,7 @@ $(function () {
 		apiKey: '1492966701.1a9b8d2.d84982232aba438fbbceba821fa4d723',
 		clientID: '1a9b8d2877bb47029597a26e54e5ffd5',
 		apiHost: 'https://api.instagram.com/',
-		count: '2',
+		count: '4',
 		timeCalc: 1 / (1000 * 60 * 60)
 	}
 
@@ -24,8 +24,13 @@ $(function () {
 
 		page: function () {
 			if (Views.page != null) {
-				Views.page.render();
+				Views.page.render(this.currentID());
 			}
+		},
+		
+		currentID: function(){
+			var hash = Backbone.history.fragment.split('/');
+			return hash[2];
 		}
 	});
 	var router = new Routes(); // Create router.
@@ -43,7 +48,8 @@ $(function () {
 				captionText: '',
 				commentsModel: '',
 				imgUrl: '',
-				likesCnt: 0
+				likesCnt: 0,
+				show: false
 			}
 		}
 	});
@@ -72,14 +78,16 @@ $(function () {
 				picID: 0,
 				fromProfilePicture: '',
 				fromUsername: '',
-				commText: ''
+				commText: '',
+				show: false
 			}
 		}
 	});
 
 	/*Declare  and create a Collection where the comments' models will be put*/
 	var CommList = Backbone.Collection.extend({
-		model: Comment
+		model: Comment,
+		localStorage: new Backbone.LocalStorage("comments")
 	});
 
 	var Comments = new CommList;
@@ -100,9 +108,12 @@ $(function () {
 		render: function () {
 			var el = $(this.el);
 			var template = this.template;
-			this.collection.models.forEach(function (model) {
+			// Get models that are absent in the page
+			var data = this.collection.where({show: false});
+			data.forEach(function (model) {
 				var html = template(model.toJSON());
 				el.append(html);
+				model.set({show: true});
 			});
 			return this;
 		}
@@ -115,17 +126,19 @@ $(function () {
 
 		initialize: function () {
 			this.render();
-
 		},
 
 		render: function () {
 			var template = this.template;
-			this.collection.models.forEach(function (model) {
+			// Get models that are absent in the page
+			var data = this.collection.where({show: false});
+			data.forEach(function (model) {
 				// Get a parent element for every comment, according picture's id.
 				var el = $('.comments-block[data-id=' + model.attributes.picID + ']');
 				$('.comments-block[data-id=' + model.attributes.picID + '] > .no-comments').remove();
 				var html = template(model.toJSON());
 				$(html).prependTo(el);
+				model.set({show: true});
 			});
 			return this;
 		}
@@ -154,14 +167,8 @@ $(function () {
 			var id = parseInt($('#more').attr('data-id'));
 			if (id > 0) {
 				var more = '&max_id=' + id;
-				var target = $("body").height(); // Get a target for mini-animation in  future. 
-				var scrollTime = target / 1.73; // time = (end-start)/speed.  Our start = 0, it's the page's begin.
-				$('.pic-row').remove();
 				$('.morebtn').remove();
 				Views.start.getData(more);
-				$("body,html").animate({
-					"scrollTop": target
-				}, scrollTime); // Scroll to next image.
 			}
 		}
 	});
@@ -198,6 +205,7 @@ $(function () {
 		search: function () { // Complex function to create a page for every search.
 			Photos.reset(); // Reset a collection of photos from previous search results.
 			Comments.reset(); // Reset a collection of comments from previous search results.
+			Comments.localStorage._clear(); // Reset a localStorage
 			$('.wrong-search').remove(); // Delete results of wrong search.
 			$('.pic-row').remove(); // Clean the output.
 			$('.morebtn').remove(); // Delete button 'Load more'.
@@ -277,7 +285,8 @@ $(function () {
 						captionText: text,
 						commentsModel: '',
 						imgUrl: pic.images.low_resolution.url,
-						likesCnt: pic.likes.count
+						likesCnt: pic.likes.count,
+						show: false
 					});
 					// Make a collection with comments' data.
 					if (pic.comments.count != 0) {
@@ -289,11 +298,12 @@ $(function () {
 
 		makeCommCollection: function (data, id) { //Make a collection with comments' data.
 			$.each(data, function (index, c) {
-				Comments.add({
+				Comments.create({
 					picID: id,
 					fromProfilePicture: c.from.profile_picture,
 					fromUsername: c.from.username,
-					commText: c.text
+					commText: c.text,
+					show: false
 				});
 			});
 		},
@@ -324,8 +334,19 @@ $(function () {
 	var Page = Backbone.View.extend({
 		el: $('.container-fluid'),
 		template: _.template($('#page').html()),
-		render: function () {
-			$(this.el).html(this.template());
+		collection: Photos,
+		commCollection: Comments,
+		render: function (data) {
+			var model = this.collection.get({id: data})
+			$(this.el).html(this.template(model.toJSON()));
+			//Get an array of models for this photo comments'
+			var comments = _.where(this.commCollection.localStorage.findAll(), {picID: data});
+			if (comments.length > 0){
+				var subCollection = new CommList(comments);
+				var commBlock = new CommBlockView({
+					collection: subCollection
+				});
+			}
 		}
 	});
 

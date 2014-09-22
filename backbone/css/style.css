@@ -4,7 +4,9 @@
 }
 
 /*General blocks*/
-
+.container-fluid {
+	padding: 0;
+}
 header {
 	background-color: #416F94;
 	color: #fff;
@@ -19,6 +21,8 @@ h1 a {
 .row {
 	background-color: #E8E9EA;
 	color: #BFBFBF;
+	padding: 0;
+	margin: 0;
 }
 form {
 	margin-top: 30px;
@@ -67,18 +71,23 @@ input[type='search'] {
 /*User's block*/
 
 .user-about {
-	font-weight: bold;
 	padding: 0;
 	padding-left: 10px;
 }
 .username {
+	font-weight: bold;
 	color: #416F94;
 	margin: 0;
+	word-wrap: break-word;
 }
 .userpic img {
 	width: 80px;
 	height: 80px;
 	margin: 0 auto 10px;
+}
+.pic-time{
+	font-weight: bold;
+	font-size: 90%;
 }
 
 /*Comments*/
@@ -98,7 +107,7 @@ input[type='search'] {
 	font-weight: bold;
 	margin-right: 10px;
 }
-.comm-pic {
+.mini-pic {
 	width: 40px;
 	height: 40px;
 }
@@ -109,4 +118,18 @@ input[type='text'] {
 }
 form.comment {
 	margin: 0;
+}
+
+/*Single page*/
+.no-pad {
+	padding: 0;
+	word-wrap: break-word;
+}
+.pic-auth{
+	padding: 10px 5px 0 10px;
+	background-color: #fff;
+}
+.pic-auth  .pic-text{
+	color: #000;
+	word-wrap: break-word;
 }
