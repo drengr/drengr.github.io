@@ -111,16 +111,17 @@
 		
 		addComm: function(event){
 			var attr = $(event.target).attr('data-pic');
-			var text = $('.comment[data-pic=' + attr + '] .new-comment').val();
-			console.log(text);
-			console.log(attr);
-			Comments.create({
-					picID: attr,
-					fromProfilePicture: 'http://images.ak.instagram.com/profiles/anonymousUser.jpg',
-					fromUsername: 'LocalUser',
-					commText: text,
-					show: false
-				});
+			var text = $('.comment[data-pic=' + attr + '] .new-comment').val().trim();
+			$('.comment[data-pic=' + attr + '] .new-comment').val('');
+			if (text.length > 0){
+				Comments.create({
+						picID: attr,
+						fromProfilePicture: 'http://images.ak.instagram.com/profiles/anonymousUser.jpg',
+						fromUsername: 'LocalUser',
+						commText: text,
+						show: false
+					});
+			}
 			return false;
 		},
 		
@@ -164,7 +165,7 @@
 			data.forEach(function (model) {
 				// Get a parent element for every comment, according picture's id.
 				var el = $('.comments-block[data-id=' + model.attributes.picID + ']');
-				$('.comments-block[data-id=' + model.attributes.picID + '] > .no-comments').remove();
+				//$('.comments-block[data-id=' + model.attributes.picID + '] > .no-comments').remove();
 				var html = template(model.toJSON());
 				$(html).prependTo(el);
 				model.set({show: true});

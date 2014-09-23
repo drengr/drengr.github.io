@@ -63,9 +63,6 @@
 							<figcaption><%= captionText %></figcaption>
 						</figure>
 						<div class='comments-block' data-id='<%= id %>'>
-							<div class='row comm-line no-comments'>
-								<div class='col-md-12 text-center'>There is no comments here. You can be first.</div>
-							</div>
 							<div class='add-comm'>
 								<form class='comment' data-pic='<%= id %>'>
 									<input type='text' class='new-comment' placeholder='Write your comment...'>
@@ -138,12 +135,9 @@
 				</div>
 				<div class='row clearfix'>
 					<div class='comments-block' data-id='<%= id %>'>
-						<div class='row comm-line no-comments'>
-							<div class='col-md-12 text-center'>There is no comments here. You can be first.</div>
-						</div>
 						<div class='add-comm'>
-							<form class='comment' onsubmit='return false'>
-								<input type='text' placeholder='Write your comment...'>
+							<form class='comment' data-pic='<%= id %>'>
+								<input type='text' class='new-comment' placeholder='Write your comment...'>
 							</form>
 						</div>
 					</div>
