@@ -1,4 +1,4 @@
-$(function () {
+//$(function () {
 	var config = {
 		apiKey: '1492966701.1a9b8d2.d84982232aba438fbbceba821fa4d723',
 		clientID: '1a9b8d2877bb47029597a26e54e5ffd5',
@@ -104,6 +104,26 @@ $(function () {
 		initialize: function () {
 			this.render();
 		},
+		
+		events: {
+			"submit .comment": 'addComm'
+		},
+		
+		addComm: function(event){
+			var attr = $(event.target).attr('data-pic');
+			var text = $('.comment[data-pic=' + attr + '] .new-comment').val();
+			console.log(text);
+			console.log(attr);
+			Comments.create({
+					picID: attr,
+					fromProfilePicture: 'http://images.ak.instagram.com/profiles/anonymousUser.jpg',
+					fromUsername: 'LocalUser',
+					commText: text,
+					show: false
+				});
+			return false;
+		},
+		
 
 		render: function () {
 			var el = $(this.el);
@@ -125,9 +145,18 @@ $(function () {
 		template: _.template($('#comment').html()),
 
 		initialize: function () {
+			this.collection.bind('add', this.reRender, this);
 			this.render();
 		},
-
+		reRender: function(){
+			$('.comm-line').remove();
+			console.log(this.collection);
+			this.collection.forEach(function (model) {
+				model.set({show: false});
+			});
+			console.log(this.collection);
+			this.render();
+		},
 		render: function () {
 			var template = this.template;
 			// Get models that are absent in the page
@@ -358,4 +387,4 @@ $(function () {
 
 	Backbone.history.start(); // Start HTML5 History push
 
-});
+//});
