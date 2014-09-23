@@ -371,6 +371,7 @@
 			$(this.el).html(this.template(model.toJSON()));
 			//Get an array of models for this photo comments'
 			var comments = _.where(this.commCollection.localStorage.findAll(), {picID: data});
+			console.log(comments)
 			if (comments.length > 0){
 				var subCollection = new CommList(comments);
 				var commBlock = new CommBlockView({
