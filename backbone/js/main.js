@@ -32,7 +32,7 @@ require([
  'views/start',
  'routers/router'
 ], function (Backbone, StartView, AppRouter) {
-  
+
   // Initialize routing and start Backbone.history. Router start app by itself.
   new AppRouter();
   Backbone.history.start();
