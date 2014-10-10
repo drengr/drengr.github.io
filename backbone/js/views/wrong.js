@@ -4,7 +4,6 @@ define([
  'backbone',
  'text!templates/wrong.html'
 ], function ($, _, Backbone, wrongTemplate) {
-  'use strict';
 
   // Declare view for wrong search results
   var WrongView = Backbone.View.extend({

@@ -4,7 +4,6 @@ define([
  'backboneLocalstorage',
  'models/comment'
 ], function (_, Backbone, Store, Comment) {
-  'use strict';
   
   // Declare and return a Collection where the comments' models will be put
   var CommList = Backbone.Collection.extend({

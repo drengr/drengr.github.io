@@ -2,7 +2,6 @@ define([
  'underscore',
  'backbone'
 ], function (_, Backbone) {
-  'use strict';
   
   // Declare a Model for comment
   var Comment = Backbone.Model.extend({

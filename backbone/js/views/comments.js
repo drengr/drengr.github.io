@@ -4,7 +4,6 @@ define([
  'backbone',
  'text!templates/comment.html'
 ], function ($, _, Backbone, commTemplate) {
-    'use strict';
 
     // Comments block view
     var CommBlockView = Backbone.View.extend({

@@ -8,7 +8,6 @@ define([
  'views/comments',
  'text!templates/page.html'
 ], function ($, _, Backbone, Photos, Comments, List, CommBlockView, pageTemplate) {
-  'use strict';
   
   // Page view
   var Page = Backbone.View.extend({

@@ -3,7 +3,6 @@ define([
  'backbone',
  'models/photo'
 ], function (_, Backbone, Photo) {
-  'use strict';
   
   // Declare  and return a Collection where the photos' models will be put
   var PhotoList = Backbone.Collection.extend({

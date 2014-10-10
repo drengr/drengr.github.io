@@ -13,7 +13,6 @@ define([
  'text!templates/start.html',
  'common'
 ], function ($, _, Backbone, Store, Comments, Photos, PaginID, Picture, CommBlockView, MoreBtn, WrongView, startTemplate, config) {
-  'use strict';
 
   // Start view
   var Start = Backbone.View.extend({

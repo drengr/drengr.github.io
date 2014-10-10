@@ -6,7 +6,6 @@ define([
  'views/comments',
  'text!templates/pic.html'
 ], function ($, _, Backbone, Comments, CommBlockView, picTemplate) {
-  'use strict';
 
   // Picture block view
   var Picture = Backbone.View.extend({

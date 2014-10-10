@@ -5,8 +5,7 @@ define([
  'views/start',
  'text!templates/morebtn.html'
 ], function ($, _, Backbone, StartView, moreTemplate) {
-  'use strict';
-
+  
   // View for button "Load more"
   var MoreBtn = Backbone.View.extend({
     initialize: function () {

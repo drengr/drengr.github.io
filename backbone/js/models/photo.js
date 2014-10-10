@@ -2,7 +2,6 @@ define([
  'underscore',
  'backbone'
 ], function (_, Backbone) {
-  'use strict';
   
   // Declare a Model for photo's info
   var Photo = Backbone.Model.extend({

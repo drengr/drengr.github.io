@@ -4,7 +4,6 @@ define([
  'views/start',
  'views/page'
 ], function ($, Backbone, StartView, PageView) {
-  'use strict';
 
   //Declare main Router
   var AppRouter = Backbone.Router.extend({
