@@ -1,139 +1,148 @@
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-/*General blocks*/
+/*
+* General blocks
+*/
 .container-fluid {
-	padding: 0;
+  padding: 0;
 }
 header {
-	background-color: #416F94;
-	color: #fff;
+  background-color: #416F94;
+  color: #fff;
 }
 h1 {
-	margin-top: 10px;
-	font-size: 26px;
+  margin-top: 10px;
+  font-size: 26px;
 }
 h1 a {
-	color: #fff;
+  color: #fff;
 }
 .row {
-	background-color: #E8E9EA;
-	color: #BFBFBF;
-	padding: 0;
-	margin: 0;
+  background-color: #E8E9EA;
+  color: #BFBFBF;
+  padding: 0;
+  margin: 0;
 }
 form {
-	margin-top: 30px;
+  margin-top: 30px;
 }
 .page-item {
-	background-color: #DBDCDD;
-	color: #000;
-	word-wrap: break-word;
-	padding-bottom: 30px;
+  background-color: #DBDCDD;
+  color: #000;
+  word-wrap: break-word;
+  padding-bottom: 30px;
 }
 
-/*Search block*/
-
+/*
+* Search block
+*/
 .search {
-	height: 100px;
-	background-color: #DBDCDD;
+  height: 100px;
+  background-color: #DBDCDD;
 }
 input[type='search'] {
-	height: 35px;
-	width: 350px;
-	border-radius: 5px;
-	outline: 0;
-	padding-left: 20px;
+  height: 35px;
+  width: 350px;
+  border-radius: 5px;
+  outline: 0;
+  padding-left: 20px;
 }
 
-/*Picture block*/
-
+/*
+* Picture block
+*/
 .pic-block {
-	box-shadow: 0px 0px 3px 2px rgba(50, 50, 50, 0.5);
+  box-shadow: 0px 0px 3px 2px rgba(50, 50, 50, 0.5);
 }
 .pic {
-	width: 100%;
-	margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
-.like-info, figcaption {
-	padding: 10px;
-	background-color: #F5F5F5;
-	border-bottom: 1px solid #BFBFBF;
+.like-info,
+figcaption {
+  padding: 10px;
+  background-color: #F5F5F5;
+  border-bottom: 1px solid #BFBFBF;
 }
 .likes-cnt {
-	margin-left: 10px;
-	font-weight: bold;
-	color: #B2B2B2;
+  margin-left: 10px;
+  font-weight: bold;
+  color: #B2B2B2;
 }
 
-/*User's block*/
-
+/*
+* User's block
+*/
 .user-about {
-	padding: 0;
-	padding-left: 10px;
+  padding: 0;
+  padding-left: 10px;
 }
 .username {
-	font-weight: bold;
-	color: #416F94;
-	margin: 0;
-	word-wrap: break-word;
+  font-weight: bold;
+  color: #416F94;
+  margin: 0;
+  word-wrap: break-word;
 }
 .userpic img {
-	width: 80px;
-	height: 80px;
-	margin: 0 auto 10px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
 }
-.pic-time{
-	font-weight: bold;
-	font-size: 90%;
+.pic-time {
+  font-weight: bold;
+  font-size: 90%;
 }
 
-/*Comments*/
-
+/*
+* Comments
+*/
 .comments-block {
-	background-color: #F8F8F8;
-	padding: 10px;
+  background-color: #F8F8F8;
+  padding: 10px;
 }
 .comm-line {
-	margin: 0;
-	background-color: #F8F8F8;
-	padding: 10px 0;
-	border-bottom: 1px solid #E8E9EA;
+  margin: 0;
+  background-color: #F8F8F8;
+  padding: 10px 0;
+  border-bottom: 1px solid #E8E9EA;
 }
 .comm-name {
-	color: #416F94;
-	font-weight: bold;
-	margin-right: 10px;
+  color: #416F94;
+  font-weight: bold;
+  margin-right: 10px;
 }
 .mini-pic {
-	width: 40px;
-	height: 40px;
+  width: 40px;
+  height: 40px;
 }
 input[type='text'] {
-	width: 100%;
-	height: 40px;
-	padding-left: 20px;
+  width: 100%;
+  height: 40px;
+  padding-left: 20px;
 }
 form.comment {
-	margin: 0;
+  margin: 0;
 }
 
-/*Single page*/
+/*
+* Single page
+*/
 .no-pad {
-	padding: 0;
-	word-wrap: break-word;
+  padding: 0;
+  word-wrap: break-word;
 }
-.pic-auth{
-	padding: 10px 5px 0 10px;
-	background-color: #fff;
+.pic-auth {
+  padding: 10px 5px 0 10px;
+  background-color: #fff;
 }
-.pic-auth  .pic-text{
-	color: #000;
-	word-wrap: break-word;
+.pic-auth .pic-text {
+  color: #000;
+  word-wrap: break-word;
 }
-.single-page{
-	margin-top: 50px;
-	margin-bottom: 50px;
+.single-page {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }

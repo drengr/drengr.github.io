@@ -1,38 +1,40 @@
 define([
-	'jquery',
-	'underscore',
-	'backbone',
-	'views/start',
-	'text!templates/morebtn.html'
-], function($, _, Backbone, StartView, moreTemplate){
-	/*View for button "Load more" */
-	var MoreBtn = Backbone.View.extend({
-		initialize: function () {
-			this.render();
-		},
+ 'jquery',
+ 'underscore',
+ 'backbone',
+ 'views/start',
+ 'text!templates/morebtn.html'
+], function ($, _, Backbone, StartView, moreTemplate) {
+  'use strict';
 
-		events: {
-			"click #more": "getMore"
-		},
+  // View for button "Load more"
+  var MoreBtn = Backbone.View.extend({
+    initialize: function () {
+      this.render();
+    },
 
-		el: $('.container-fluid'),
+    events: {
+      "click #more": "getMore"
+    },
 
-		template: _.template(moreTemplate),
+    el: $('.container-fluid'),
 
-		render: function () {
-			this.$el.append(this.template(this.model.toJSON()));
-		},
+    template: _.template(moreTemplate),
 
-		getMore: function () {
-			var app = require('views/start');
-			var id = parseInt($('#more').attr('data-id'));
-			if (id > 0) {
-				var more = '&max_id=' + id;
-				$('.morebtn').remove();
-				app.getData(more);
-			}
-		}
-	});
-	
-	return MoreBtn;
+    render: function () {
+      this.$el.append(this.template(this.model.toJSON()));
+    },
+
+    getMore: function () {
+      var app = require('views/start');
+      var id = parseInt($('#more').attr('data-id'), 10);
+      if (id > 0) {
+        var more = '&max_id=' + id;
+        $('.morebtn').remove();
+        app.getData(more);
+      }
+    }
+  });
+
+  return MoreBtn;
 });
