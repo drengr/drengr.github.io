@@ -59,9 +59,9 @@ define([
     getData: function (more) {
       var tag = $('input.search-tag').val().trim().split(' ')[0];
       if (more === undefined) {
-        url = this.getUrl(tag);
+        var url = this.getUrl(tag);
       } else {
-        url = this.getUrl(tag) + more;
+        var url = this.getUrl(tag) + more;
       }
       $.ajax({
         dataType: 'jsonp',
