@@ -1,4 +1,4 @@
-define([], function () {
+define(function () {
   var config = {
     apiKey: '1492966701.1a9b8d2.d84982232aba438fbbceba821fa4d723',
     clientID: '1a9b8d2877bb47029597a26e54e5ffd5',
