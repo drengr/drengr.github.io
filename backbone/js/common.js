@@ -5,7 +5,7 @@ define(function () {
     apiHost: 'https://api.instagram.com/',
     count: '4',
     timeCalc: 1 / (1000 * 60 * 60)
-  }
+  };
 
   return config;
 });

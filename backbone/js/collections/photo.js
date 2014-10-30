@@ -9,6 +9,6 @@ define([
     model: Photo
   });
 
-  var Photos = new PhotoList()
+  var Photos = new PhotoList();
   return Photos;
 });

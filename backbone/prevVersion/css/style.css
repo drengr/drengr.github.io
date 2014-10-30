@@ -51,7 +51,7 @@ input[type='search'] {
 /*Picture block*/
 
 .pic-block {
-	box-shadow: 0px 0px 3px 2px rgba(50, 50, 50, 0.5);
+	box-shadow: 0 0 3px 2px rgba(50, 50, 50, 0.5);
 }
 .pic {
 	width: 100%;
@@ -71,8 +71,7 @@ input[type='search'] {
 /*User's block*/
 
 .user-about {
-	padding: 0;
-	padding-left: 10px;
+	padding: 0 0 0 10px;
 }
 .username {
 	font-weight: bold;

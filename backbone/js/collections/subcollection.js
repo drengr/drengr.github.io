@@ -6,7 +6,7 @@ define([
   
   // Declare and return a Collection where the comments for single page will be put
   var List = Backbone.Collection.extend({
-    model: Comment,
+    model: Comment
   });
 
   return List;

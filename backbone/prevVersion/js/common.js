@@ -5,7 +5,7 @@
 		apiHost: 'https://api.instagram.com/',
 		count: '4',
 		timeCalc: 1 / (1000 * 60 * 60)
-	}
+	};
 
 
 	/*Router*/
@@ -367,7 +367,7 @@
 		collection: Photos,
 		commCollection: Comments,
 		render: function (data) {
-			var model = this.collection.get({id: data})
+			var model = this.collection.get({id: data});
 			$(this.el).html(this.template(model.toJSON()));
 			//Get an array of models for this photo comments'
 			var comments = _.where(this.commCollection.localStorage.findAll(), {picID: data});
